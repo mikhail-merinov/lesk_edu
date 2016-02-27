@@ -5,7 +5,6 @@ import java.sql.Date;
 
 import com.lesk.test1.account.Account;
 import com.lesk.test1.meter.Meter;
-import com.lesk.test1.meter.MeterChar;
 import com.lesk.test1.meterRead.MeterRead;
 import com.lesk.test1.meterRead.Source;
 
