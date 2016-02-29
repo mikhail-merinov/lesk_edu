@@ -2,7 +2,8 @@ package com.lesk.test1.account;
 import java.util.Date;
 
 public class Account {
-
+	//initial commit before HW3
+	
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", name=" + name + "]";
