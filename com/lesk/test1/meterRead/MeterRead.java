@@ -1,4 +1,4 @@
-package com.lesk.test1.meterRead;
+п»їpackage com.lesk.test1.meterRead;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -41,14 +41,14 @@ public class MeterRead {
 	}
 	
 	
-	// конструктор без параметров
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 	public MeterRead(){
 		this.id=new MeterRead_Id();
 		this.mrCharList = new ArrayList<MeterReadChar>();
 	}
 	
-	// переопределяем метод toString, который возвращает описание экземпляра
-	// генерим автоматически generate toString()
+	// РїРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј РјРµС‚РѕРґ toString, РєРѕС‚РѕСЂС‹Р№ РІРѕР·РІСЂР°С‰Р°РµС‚ РѕРїРёСЃР°РЅРёРµ СЌРєР·РµРјРїР»СЏСЂР°
+	// РіРµРЅРµСЂРёРј Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё generate toString()
 	@Override
 	public String toString() {
 		return "MeterRead [id=" + id + ", mrDt=" + mrDt + ", source=" + source + ", val=" + val + "]";
@@ -63,9 +63,9 @@ public class MeterRead {
 		return result;
 	}
 	
-	// переопределяем метод equals для сверки показаний по дате.		
-	// т.е. если показания на одну дату, и с одинаковым источником, они считаюся одинаковыми.
-	// генерится автоматически generate hashCode() and Equals()
+	// РїРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј РјРµС‚РѕРґ equals РґР»СЏ СЃРІРµСЂРєРё РїРѕРєР°Р·Р°РЅРёР№ РїРѕ РґР°С‚Рµ.		
+	// С‚.Рµ. РµСЃР»Рё РїРѕРєР°Р·Р°РЅРёСЏ РЅР° РѕРґРЅСѓ РґР°С‚Сѓ, Рё СЃ РѕРґРёРЅР°РєРѕРІС‹Рј РёСЃС‚РѕС‡РЅРёРєРѕРј, РѕРЅРё СЃС‡РёС‚Р°СЋСЃСЏ РѕРґРёРЅР°РєРѕРІС‹РјРё.
+	// РіРµРЅРµСЂРёС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё generate hashCode() and Equals()
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -88,22 +88,22 @@ public class MeterRead {
 		return true;
 	}
 	
-	//---------------------------------------------------------------- РАБОТА С ХАРАКТЕРИСТИКАМИ ППУ
+	//---------------------------------------------------------------- Р РђР‘РћРўРђ РЎ РҐРђР РђРљРўР•Р РРЎРўРРљРђРњР РџРџРЈ
 	
-	//добавить характеристику в список
+	//РґРѕР±Р°РІРёС‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РІ СЃРїРёСЃРѕРє
 	public void addMrChar(MeterReadChar mrc){
 		if(mrCharList.contains(mrc)){
-			System.out.println("Характеристика уже существует!");
+			System.out.println("РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєР° СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!");
 			return;
 		} else if(!this.id.equals(mrc.getMeterReadId())){
-			System.out.println("ИД ППУ не соответствует ИД ППУ характеристики!");
+			System.out.println("РР” РџРџРЈ РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ РР” РџРџРЈ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё!");
 		} else{
 			mrCharList.add(mrc);
-			System.out.printf("Добавлена характеристика ППУ: ИД ППУ - %s, Дата - %s, тип - %s, значение %s \n", mrc.getMeterReadId().getId(), mrc.getCharDate(), mrc.getCharType(), mrc.getCharVal());
+			System.out.printf("Р”РѕР±Р°РІР»РµРЅР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєР° РџРџРЈ: РР” РџРџРЈ - %s, Р”Р°С‚Р° - %s, С‚РёРї - %s, Р·РЅР°С‡РµРЅРёРµ %s \n", mrc.getMeterReadId().getId(), mrc.getCharDate(), mrc.getCharType(), mrc.getCharVal());
 		}
 	}
 	
-	//добавить характеристику по полям
+	//РґРѕР±Р°РІРёС‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РїРѕ РїРѕР»СЏРј
 	public void addMrChar(MeterRead_Id mrId, Date mrDt, String charType, String charVal){
 		MeterReadChar mrc = new MeterReadChar(mrId);
 		mrc.setCharDate(mrDt);
@@ -112,12 +112,12 @@ public class MeterRead {
 		addMrChar(mrc);
 	}
 
-	// удаление характеристики
+	// СѓРґР°Р»РµРЅРёРµ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё
 	public void removeMrChar(MeterReadChar mrc){
 		mrCharList.remove(mrc);
 	}
 	
-	// возврат характеристики определенного типа на дату
+	// РІРѕР·РІСЂР°С‚ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ С‚РёРїР° РЅР° РґР°С‚Сѓ
 	public MeterReadChar retMrChar(Date mrDt, String charType){
 		for(MeterReadChar mrc:mrCharList){
 			if(mrc.getCharDate().equals(mrDt) && mrc.getCharType().equals(charType)){
@@ -127,18 +127,18 @@ public class MeterRead {
 		return null;
 	}
 	
-	// печать полного списка характеристик без сортировки
+	// РїРµС‡Р°С‚СЊ РїРѕР»РЅРѕРіРѕ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє Р±РµР· СЃРѕСЂС‚РёСЂРѕРІРєРё
 	public void printMrChar(){
-		System.out.println("---------------------Вывод полного списка характеристик ППУ без сортировки----------");
+		System.out.println("---------------------Р’С‹РІРѕРґ РїРѕР»РЅРѕРіРѕ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РџРџРЈ Р±РµР· СЃРѕСЂС‚РёСЂРѕРІРєРё----------");
 		for(MeterReadChar mrc:mrCharList){
 			System.out.println(mrc);
 		}
 		System.out.println("------------------------------------------------------------------------------------");
 	}
 	
-	// печать отсортированного списка характеристик указанного типа
+	// РїРµС‡Р°С‚СЊ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє СѓРєР°Р·Р°РЅРЅРѕРіРѕ С‚РёРїР°
 	public void printSortMrChar(String mrCharType){
-		System.out.println("---------------------Вывод полного списка характеристик ППУ сортировка по :"+mrCharType);
+		System.out.println("---------------------Р’С‹РІРѕРґ РїРѕР»РЅРѕРіРѕ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РџРџРЈ СЃРѕСЂС‚РёСЂРѕРІРєР° РїРѕ :"+mrCharType);
 		Collections.sort(mrCharList, new CustomComparatorChar());
 		for(MeterReadChar mrc:mrCharList){
 			if(mrc.getCharType().equals(mrCharType)){
@@ -148,7 +148,7 @@ public class MeterRead {
 		System.out.println("---------------------------------------------------------------------------------------");
 	}
 	
-	// сортировка характеристик
+	// СЃРѕСЂС‚РёСЂРѕРІРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє
 	public class CustomComparatorChar implements Comparator<MeterReadChar>{
 
 		@Override
