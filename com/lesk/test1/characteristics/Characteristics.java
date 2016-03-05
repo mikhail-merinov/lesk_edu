@@ -1,15 +1,15 @@
-package com.lesk.test1.characteristics;
+п»їpackage com.lesk.test1.characteristics;
 
 import java.sql.Date;
 
 public class Characteristics {
 	
-	// создаем поля класса.
+	// СЃРѕР·РґР°РµРј РїРѕР»СЏ РєР»Р°СЃСЃР°.
 	private String charType;
 	private String charVal;
 	private Date charDate;
 	
-	// геттеры и сеттеры
+	// РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹
 	public String getCharType() {
 		return charType;
 	}
