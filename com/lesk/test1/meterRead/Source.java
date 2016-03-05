@@ -1,4 +1,4 @@
-package com.lesk.test1.meterRead;
+ï»¿package com.lesk.test1.meterRead;
 
 public class Source {
 	
@@ -15,7 +15,7 @@ public class Source {
 		return priority;
 	}
 	
-	// êîíñòðóêòîð
+	// ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€
 	public Source(int priority, String sourceDescr){
 		if(priority>10){
 			this.priority=10;
