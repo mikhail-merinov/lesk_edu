@@ -1,4 +1,4 @@
-package com.lesk.test1.account;
+п»їpackage com.lesk.test1.account;
 import java.util.Date;
 
 public class Account {
@@ -9,14 +9,14 @@ public class Account {
 		return "Account [id=" + id + ", name=" + name + "]";
 	}
 
-	// свойства класса
+	// СЃРІРѕР№СЃС‚РІР° РєР»Р°СЃСЃР°
 	private String name;
 	private Account_Id id;
 	private Date startDt;
 	private String passport;
 	
-	// методы класса Геттеры, Сеттеры
-	// можно генерировать автоматически из меню Source > Generate Getters Setters
+	// РјРµС‚РѕРґС‹ РєР»Р°СЃСЃР° Р“РµС‚С‚РµСЂС‹, РЎРµС‚С‚РµСЂС‹
+	// РјРѕР¶РЅРѕ РіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РёР· РјРµРЅСЋ Source > Generate Getters Setters
 	public void setName(String n){
 		this.name=n;
 	}
@@ -56,14 +56,14 @@ public class Account {
 		System.out.println("Account activated: "+ this.startDt);
 	}
 	
-	// конструктор
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	public Account(){
 		System.out.println("Account constructor W/O parameters");
 		this.id = new Account_Id();
 		
 	}
-	// конструктор с параметрами
-	// можно генераровать автоматически, как геттеры и сеттеры.
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	// РјРѕР¶РЅРѕ РіРµРЅРµСЂР°СЂРѕРІР°С‚СЊ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё, РєР°Рє РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹.
 	public Account(String name){
 		System.out.println("Account constructor String parameter");
 		this.name=name;
@@ -72,7 +72,7 @@ public class Account {
 		
 	}
 	
-	// конструктор, при котором номер паспорта будет номером ИД
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ, РїСЂРё РєРѕС‚РѕСЂРѕРј РЅРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р° Р±СѓРґРµС‚ РЅРѕРјРµСЂРѕРј РР”
 	public Account(String n, String pass){
 		System.out.println("Account constructor for Passport");
 		this.name = n;

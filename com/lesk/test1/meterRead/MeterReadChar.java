@@ -1,4 +1,4 @@
-package com.lesk.test1.meterRead;
+п»їpackage com.lesk.test1.meterRead;
 
 import com.lesk.test1.characteristics.Characteristics;
 
@@ -6,18 +6,18 @@ public class MeterReadChar extends Characteristics {
 
 	private MeterRead_Id meterReadId;
 
-	//геттеры и сеттеры
+	//РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹
 	public MeterRead_Id getMeterReadId() {
 		return meterReadId;
 	}
 
-	// конструктор с параметром МР ИД
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РњР  РР”
 	public MeterReadChar(MeterRead_Id mrId){
 		this.meterReadId=mrId;
 	}
 
 		
-	// переопределение Стринга
+	// РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ РЎС‚СЂРёРЅРіР°
 	@Override
 	public String toString() {
 		return "MeterReadChar [meterReadId=" + meterReadId + ", toString()=" + super.toString() + "]";
@@ -31,7 +31,7 @@ public class MeterReadChar extends Characteristics {
 		return result;
 	}
 
-	// переопределение эквалса
+	// РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ СЌРєРІР°Р»СЃР°
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
