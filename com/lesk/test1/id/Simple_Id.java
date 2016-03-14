@@ -1,29 +1,29 @@
-package com.lesk.test1.id;
+п»їpackage com.lesk.test1.id;
 import java.util.Random;
 
 public class Simple_Id {
 
  private String id;
  
- // получить случайный ID
+ // РїРѕР»СѓС‡РёС‚СЊ СЃР»СѓС‡Р°Р№РЅС‹Р№ ID
  public Simple_Id() {
   //System.out.println("Simple_Id()");
   id = String.valueOf(new Random().nextInt(1000000000));
  }
  
- // получить ID в диапазоне 0..range
+ // РїРѕР»СѓС‡РёС‚СЊ ID РІ РґРёР°РїР°Р·РѕРЅРµ 0..range
  public Simple_Id(int range) {
   System.out.println("Simple_Id(int range)");
   id = String.valueOf(new Random().nextInt(range));
  }
  
- // установить ID
+ // СѓСЃС‚Р°РЅРѕРІРёС‚СЊ ID
  public Simple_Id(String id) {
   System.out.println("Simple_Id(String id)");
   this.id = id;
  }
 
- // вернуть ID
+ // РІРµСЂРЅСѓС‚СЊ ID
  public String getId() {
   return id;
  }

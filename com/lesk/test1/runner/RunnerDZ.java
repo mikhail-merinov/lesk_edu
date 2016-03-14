@@ -1,4 +1,4 @@
-package com.lesk.test1.runner;
+п»їpackage com.lesk.test1.runner;
 //TESTTESTTEST
 import java.sql.Date;
 
@@ -17,16 +17,16 @@ public class RunnerDZ {
 		Date d=Date.valueOf("2016-03-01");
 		Date d1=Date.valueOf("2016-02-29");
 		
-		System.out.println("____________________________________________________________________________ ДЗ Михаила____________________");
-		// новый прибор
+		System.out.println("____________________________________________________________________________ Р”Р— РњРёС…Р°РёР»Р°____________________");
+		// РЅРѕРІС‹Р№ РїСЂРёР±РѕСЂ
 		Meter mtr = new Meter("12345");
 		mtr.On(d);
 		Meter mtr1 = new Meter("8888");
 		mtr1.On(d1);
 		
 		
-		//----------------------------------------------------------   ХАРАКТЕРИСТИКИ ПУ ----------------------------------
-		// новые характеристики
+		//----------------------------------------------------------   РҐРђР РђРљРўР•Р РРЎРўРРљР РџРЈ ----------------------------------
+		// РЅРѕРІС‹Рµ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё
 		MeterChar mtrChar = new MeterChar(mtr.getId());
 		mtrChar.setCharDate(d);
 		mtrChar.setCharType("PRD-POV");
@@ -42,27 +42,27 @@ public class RunnerDZ {
 		mtrChar2.setCharType("D-VYP-PU");
 		mtrChar2.setCharVal("01.01.2003");
 		
-		// добавление характеристик
+		// РґРѕР±Р°РІР»РµРЅРёРµ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє
 		mtr.addMtrChar(mtrChar);
 		mtr.addMtrChar(mtrChar1);
 		mtr.addMtrChar(mtrChar2);
 		mtr1.addMtrChar(mtrChar);
 		
-		// печать характеристик
+		// РїРµС‡Р°С‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє
 		mtr.printMtrChar();
 		mtr.printSortMtrChar("PRD-POV");
 		
-		//поиск характеристики определенного типа на дату
+		//РїРѕРёСЃРє С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ С‚РёРїР° РЅР° РґР°С‚Сѓ
 		System.out.println(mtr.retMtrChat(d1, "D-VYP-PU"));
 		
-		//----------------------------------------------------------- ХАРАКТЕРИСТИКИ ПОКАЗАНИЙ------------------------------------
-		System.out.println("---------------------------------------ХАРАКТЕРИСТИКИ ПОКАЗАНИй ПУ");
+		//----------------------------------------------------------- РҐРђР РђРљРўР•Р РРЎРўРРљР РџРћРљРђР—РђРќРР™------------------------------------
+		System.out.println("---------------------------------------РҐРђР РђРљРўР•Р РРЎРўРРљР РџРћРљРђР—РђРќРР№ РџРЈ");
 		
 		Source src=new Source(1,"KONTR");
 		Source src1=new Source(2,"KONTR");
 		Source src2=new Source(10,"KONTR");
 		
-		// создаем показание
+		// СЃРѕР·РґР°РµРј РїРѕРєР°Р·Р°РЅРёРµ
 		MeterRead mr = new MeterRead();
 		mr.setMrDt(d);
 		mr.setSource(src);
@@ -70,7 +70,7 @@ public class RunnerDZ {
 		System.out.println(mr);
 		
 
-		// создаем характеристики ППУ
+		// СЃРѕР·РґР°РµРј С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РџРџРЈ
 		MeterReadChar mrChar = new MeterReadChar(mr.getId());
 		mrChar.setCharDate(d);
 		mrChar.setCharType("ORIG_MR");
@@ -88,17 +88,17 @@ public class RunnerDZ {
 		mrChar2.setCharVal("PrSBL020216.dbf");
 		System.out.println(mrChar2);
 		
-		// добавляем характеристику
+		// РґРѕР±Р°РІР»СЏРµРј С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ
 		mr.addMrChar(mrChar);
 		mr.addMrChar(mrChar1);
 		mr.addMrChar(mrChar2);
 		
-		// печать характеристик ППУ
+		// РїРµС‡Р°С‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РџРџРЈ
 		mr.printMrChar();
 		mr.printSortMrChar("ORIG_MR");
 		
 		
-		// вывод отсортированного списка показаний по приоритету в диапазоне дат
+		// РІС‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ СЃРїРёСЃРєР° РїРѕРєР°Р·Р°РЅРёР№ РїРѕ РїСЂРёРѕСЂРёС‚РµС‚Сѓ РІ РґРёР°РїР°Р·РѕРЅРµ РґР°С‚
 		Meter mtr5 = new Meter("0001");
 		mtr5.On(Date.valueOf("2010-01-01"));
 		mtr5.addMeterRead(Date.valueOf("2016-01-01"), 10, src2);
@@ -116,42 +116,42 @@ public class RunnerDZ {
 		
 		
 		
-		//--------------------------------------- ТЕСТИРУЕМ ХАРАКТЕРИСТИКИ АККАУНТА
+		//--------------------------------------- РўР•РЎРўРР РЈР•Рњ РҐРђР РђРљРўР•Р РРЎРўРРљР РђРљРљРђРЈРќРўРђ
 		System.out.println();
 		System.out.println();
 		System.out.println();
 		System.out.println();
-		System.out.println("ТЕСТИРУЕМ ХАРАКТЕРИСТИКИ АККАУНТА******************************************************");
+		System.out.println("РўР•РЎРўРР РЈР•Рњ РҐРђР РђРљРўР•Р РРЎРўРРљР РђРљРљРђРЈРќРўРђ******************************************************");
 		System.out.println();
 		
 		
 		
 		
 		
-		// создаем аккаунт
+		// СЃРѕР·РґР°РµРј Р°РєРєР°СѓРЅС‚
 		Account acct = new Account();
-		acct.setName("Петров Иван Никифорович");
+		acct.setName("РџРµС‚СЂРѕРІ РРІР°РЅ РќРёРєРёС„РѕСЂРѕРІРёС‡");
 		acct.setPassport("777001");
-		System.out.println("Привязываемся к ИД ЛС по номеру паспорта------------- " + acct);
+		System.out.println("РџСЂРёРІСЏР·С‹РІР°РµРјСЃСЏ Рє РР” Р›РЎ РїРѕ РЅРѕРјРµСЂСѓ РїР°СЃРїРѕСЂС‚Р°------------- " + acct);
 		
-		// рандом даты для простоты ввода
+		// СЂР°РЅРґРѕРј РґР°С‚С‹ РґР»СЏ РїСЂРѕСЃС‚РѕС‚С‹ РІРІРѕРґР°
 		Date ad1=Date.valueOf("2016-03-10");
 		Date ad2=Date.valueOf("2016-02-11");
 
 		
-		// создаем характеристики Аккаунта	
+		// СЃРѕР·РґР°РµРј С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РђРєРєР°СѓРЅС‚Р°	
 		AccountChar acctChar = new AccountChar(acct.getId());
 		acctChar.setCharDate(ad1);
 		acctChar.setCharType("VID_DOG");
 		acctChar.setCharVal("7");
-		System.out.println("Создаем хар-ку ИД ЛС " + acctChar.getAccountId() + ",  " + acctChar.getCharType() + ",  " +
+		System.out.println("РЎРѕР·РґР°РµРј С…Р°СЂ-РєСѓ РР” Р›РЎ " + acctChar.getAccountId() + ",  " + acctChar.getCharType() + ",  " +
 		acctChar.getCharVal() + ",  " +	acctChar.getCharDate());
 		
 		AccountChar acctChar1 = new AccountChar(acct.getId());
 		acctChar1.setCharDate(ad2);
 		acctChar1.setCharType("VID_DOG");
 		acctChar1.setCharVal("2");
-		System.out.println("Создаем хар-ку ИД ЛС " + acctChar1.getAccountId() + ",  " + acctChar1.getCharType() + ",  " +
+		System.out.println("РЎРѕР·РґР°РµРј С…Р°СЂ-РєСѓ РР” Р›РЎ " + acctChar1.getAccountId() + ",  " + acctChar1.getCharType() + ",  " +
 				acctChar1.getCharVal() + ",  " +	acctChar1.getCharDate());
 		
 		
@@ -159,26 +159,26 @@ public class RunnerDZ {
 		acctChar2.setCharDate(ad2);
 		acctChar2.setCharType("CM-ISKRL");
 		acctChar2.setCharVal("NALLWD");
-		System.out.println("Создаем хар-ку ИД ЛС " + acctChar2.getAccountId() + ",  " + acctChar2.getCharType() + ",  " +
+		System.out.println("РЎРѕР·РґР°РµРј С…Р°СЂ-РєСѓ РР” Р›РЎ " + acctChar2.getAccountId() + ",  " + acctChar2.getCharType() + ",  " +
 				acctChar2.getCharVal() + ",  " +	acctChar2.getCharDate());
 		
-		//Проверка добавления существующей характеристики
+		//РџСЂРѕРІРµСЂРєР° РґРѕР±Р°РІР»РµРЅРёСЏ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµР№ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё
 		AccountChar acctChar3 = new AccountChar(acct.getId());
 		acctChar3.setCharDate(ad2);
 		acctChar3.setCharType("CM-ISKRL");
 		acctChar3.setCharVal("NALLWD");
-		System.out.println("Создаем хар-ку ИД ЛС " + acctChar3.getAccountId() + ",  " + acctChar3.getCharType() + ",  " +
+		System.out.println("РЎРѕР·РґР°РµРј С…Р°СЂ-РєСѓ РР” Р›РЎ " + acctChar3.getAccountId() + ",  " + acctChar3.getCharType() + ",  " +
 				acctChar3.getCharVal() + ",  " +	acctChar3.getCharDate());
 		System.out.println();
 		
 		
-		// добавляем характеристику
+		// РґРѕР±Р°РІР»СЏРµРј С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ
 		acct.addAcctChar(acctChar);
 		acct.addAcctChar(acctChar1);
 		acct.addAcctChar(acctChar2);
 		acct.addAcctChar(acctChar3);
 		
-		// печать характеристик Аккаунта
+		// РїРµС‡Р°С‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РђРєРєР°СѓРЅС‚Р°
 		acct.printAcctChar();
 		acct.printSortAcctChar("VID_DOG");
 		

@@ -1,4 +1,4 @@
-package com.lesk.test1.runner;
+п»їpackage com.lesk.test1.runner;
 
 //import java.util.Date;
 import java.sql.Date;
@@ -22,7 +22,7 @@ public class Runner {
 //		System.out.println("id: "+a.getId()+" name: "+a.getName());
 //		
 //		Account b = new Account("Misha","555");
-//		// два раза пишем getId, т.к тип свойства для класса аккаунт является классом Account_Id
+//		// РґРІР° СЂР°Р·Р° РїРёС€РµРј getId, С‚.Рє С‚РёРї СЃРІРѕР№СЃС‚РІР° РґР»СЏ РєР»Р°СЃСЃР° Р°РєРєР°СѓРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РєР»Р°СЃСЃРѕРј Account_Id
 //		System.out.println("id: "+b.getId().getId()+" name: "+b.getName());
 //		Date dat1 = Date.valueOf("2015-12-31");
 //		b.Activate(dat1);
@@ -45,18 +45,18 @@ public class Runner {
 		m.addMeterRead(Date.valueOf("2016-02-29"), 650, src);
 		
 			
-		System.out.println("Список показаний");
+		System.out.println("РЎРїРёСЃРѕРє РїРѕРєР°Р·Р°РЅРёР№");
 		m.printMRs();
 		
-		// получаем показания на дату
+		// РїРѕР»СѓС‡Р°РµРј РїРѕРєР°Р·Р°РЅРёСЏ РЅР° РґР°С‚Сѓ
 		MeterRead mr = m.getMeterReadByDate(d1);
-		System.out.println("Показание на дату: "+d1);
+		System.out.println("РџРѕРєР°Р·Р°РЅРёРµ РЅР° РґР°С‚Сѓ: "+d1);
 		System.out.println(mr);
 		
-		// удаляем показание
+		// СѓРґР°Р»СЏРµРј РїРѕРєР°Р·Р°РЅРёРµ
 		m.removeMeterRead(mr);
 		
-		System.out.println("Список показаний после удаления");
+		System.out.println("РЎРїРёСЃРѕРє РїРѕРєР°Р·Р°РЅРёР№ РїРѕСЃР»Рµ СѓРґР°Р»РµРЅРёСЏ");
 		m.printMRs();
 		//Meter m = new Meter("12345567");
 		//m.On(d);
@@ -76,12 +76,12 @@ public class Runner {
 		System.out.println("mr2 "+mr2);
 		
 		if (mr1.equals(mr2)){
-			System.out.println("Показания одинаковые");
+			System.out.println("РџРѕРєР°Р·Р°РЅРёСЏ РѕРґРёРЅР°РєРѕРІС‹Рµ");
 		} else {
-			System.out.println("Показания разные");
+			System.out.println("РџРѕРєР°Р·Р°РЅРёСЏ СЂР°Р·РЅС‹Рµ");
 		}
 		
-		// пробуем добавить два показания на одну дату. Проверка метода contains в методе добавления показаний класса Meter.
+		// РїСЂРѕР±СѓРµРј РґРѕР±Р°РІРёС‚СЊ РґРІР° РїРѕРєР°Р·Р°РЅРёСЏ РЅР° РѕРґРЅСѓ РґР°С‚Сѓ. РџСЂРѕРІРµСЂРєР° РјРµС‚РѕРґР° contains РІ РјРµС‚РѕРґРµ РґРѕР±Р°РІР»РµРЅРёСЏ РїРѕРєР°Р·Р°РЅРёР№ РєР»Р°СЃСЃР° Meter.
 		m.addMeterRead(Date.valueOf("2016-03-01"), 123, src);
 		m.addMeterRead(Date.valueOf("2016-01-05"), 124, src1);
 		m.printMRs();
@@ -93,7 +93,7 @@ public class Runner {
 		
 	}
 	
-	//TODO: Проверить, что нельзя добавить ППУ на неподключенные счетчик.
-	//TODO: Проверить, что нельзя вносить показания датой раньше чем дата включения.
+	//TODO: РџСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ РЅРµР»СЊР·СЏ РґРѕР±Р°РІРёС‚СЊ РџРџРЈ РЅР° РЅРµРїРѕРґРєР»СЋС‡РµРЅРЅС‹Рµ СЃС‡РµС‚С‡РёРє.
+	//TODO: РџСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ РЅРµР»СЊР·СЏ РІРЅРѕСЃРёС‚СЊ РїРѕРєР°Р·Р°РЅРёСЏ РґР°С‚РѕР№ СЂР°РЅСЊС€Рµ С‡РµРј РґР°С‚Р° РІРєР»СЋС‡РµРЅРёСЏ.
 
 }

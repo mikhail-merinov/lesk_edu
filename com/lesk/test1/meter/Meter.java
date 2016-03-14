@@ -1,4 +1,4 @@
-package com.lesk.test1.meter;
+п»їpackage com.lesk.test1.meter;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -11,15 +11,15 @@ import com.lesk.test1.meterRead.Source;
 
 public class Meter {
 
-	private String badgeNumber; // номер шильдика
+	private String badgeNumber; // РЅРѕРјРµСЂ С€РёР»СЊРґРёРєР°
 	private Meter_Id id;
-	private Date receiveDt; // дата установки
-	private Date retireDt; // дата снятия
-	private int digitsLeft; // разрядность слева
-	private int digitsRight;	// разрядность справа
-	private double regConst=1; // коэффициент трансформации
-	private List<MeterRead> mrList;  /// коллекция (Показания ПУ)
-	private List<MeterChar> mtrCharList; // коллекция (список характеристик ПУ)
+	private Date receiveDt; // РґР°С‚Р° СѓСЃС‚Р°РЅРѕРІРєРё
+	private Date retireDt; // РґР°С‚Р° СЃРЅСЏС‚РёСЏ
+	private int digitsLeft; // СЂР°Р·СЂСЏРґРЅРѕСЃС‚СЊ СЃР»РµРІР°
+	private int digitsRight;	// СЂР°Р·СЂСЏРґРЅРѕСЃС‚СЊ СЃРїСЂР°РІР°
+	private double regConst=1; // РєРѕСЌС„С„РёС†РёРµРЅС‚ С‚СЂР°РЅСЃС„РѕСЂРјР°С†РёРё
+	private List<MeterRead> mrList;  /// РєРѕР»Р»РµРєС†РёСЏ (РџРѕРєР°Р·Р°РЅРёСЏ РџРЈ)
+	private List<MeterChar> mtrCharList; // РєРѕР»Р»РµРєС†РёСЏ (СЃРїРёСЃРѕРє С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РџРЈ)
 	
 	
 	public String getBadgeNumber() {
@@ -65,21 +65,21 @@ public class Meter {
 		this.regConst = regConst;
 	}
 	
-	// конструктор
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	public Meter(){
 		this.id = new Meter_Id();
-		System.out.println("Meter. Конструктор по умолчанию. ID: "+ id.getId());
+		System.out.println("Meter. РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ. ID: "+ id.getId());
 	}
 	
-	// контруктор с параметрами
+	// РєРѕРЅС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	public Meter(String badgeNumber){
 		this.id = new Meter_Id(badgeNumber);
 		setBadgeNumber(badgeNumber);
-		System.out.println("Meter. Конструктор с параметром String. Создан прибор учета. ID "+id.getId()+", Номер: "+badgeNumber);
+		System.out.println("Meter. РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј String. РЎРѕР·РґР°РЅ РїСЂРёР±РѕСЂ СѓС‡РµС‚Р°. ID "+id.getId()+", РќРѕРјРµСЂ: "+badgeNumber);
 	}
 	
-	// установка ПУ. при установке проверяем если дата установки пустая, то устанавливаем, иначе считаем, что счетчик уже установлен
-	// также инициализируем коллекции СписокПоказаний и СписокХарактеристик
+	// СѓСЃС‚Р°РЅРѕРІРєР° РџРЈ. РїСЂРё СѓСЃС‚Р°РЅРѕРІРєРµ РїСЂРѕРІРµСЂСЏРµРј РµСЃР»Рё РґР°С‚Р° СѓСЃС‚Р°РЅРѕРІРєРё РїСѓСЃС‚Р°СЏ, С‚Рѕ СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј, РёРЅР°С‡Рµ СЃС‡РёС‚Р°РµРј, С‡С‚Рѕ СЃС‡РµС‚С‡РёРє СѓР¶Рµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ
+	// С‚Р°РєР¶Рµ РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РєРѕР»Р»РµРєС†РёРё РЎРїРёСЃРѕРєРџРѕРєР°Р·Р°РЅРёР№ Рё РЎРїРёСЃРѕРєРҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРє
 	public void On(Date d){
 		if(getReceiveDt()==null){
 			setReceiveDt(d);
@@ -88,7 +88,7 @@ public class Meter {
 			mtrCharList = new ArrayList<MeterChar>();
 		} else 
 		{
-			System.out.println("Счетчик уже установлен!");
+			System.out.println("РЎС‡РµС‚С‡РёРє СѓР¶Рµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ!");
 		}
 	}
 	
@@ -97,17 +97,17 @@ public class Meter {
 			(getReceiveDt()!=null) && 
 			(d.compareTo(getReceiveDt())>0)){
 			setRetireDt(d);
-			System.out.println("Счетчик снят. Дата снятия: "+d);
+			System.out.println("РЎС‡РµС‚С‡РёРє СЃРЅСЏС‚. Р”Р°С‚Р° СЃРЅСЏС‚РёСЏ: "+d);
 		}
 	}
 	
-	@Override // аннотация (указание, что это перегружаемый метод)
+	@Override // Р°РЅРЅРѕС‚Р°С†РёСЏ (СѓРєР°Р·Р°РЅРёРµ, С‡С‚Рѕ СЌС‚Рѕ РїРµСЂРµРіСЂСѓР¶Р°РµРјС‹Р№ РјРµС‚РѕРґ)
 	public String toString() {
 		return "Meter [id=" + id + ", badgeNumber=" + badgeNumber + "]";
 	}
 	
-	//																	РАБОТА С ПОКАЗАНИЯМИ
-	// добавить показания по полям дата, значение, источник
+	//																	Р РђР‘РћРўРђ РЎ РџРћРљРђР—РђРќРРЇРњР
+	// РґРѕР±Р°РІРёС‚СЊ РїРѕРєР°Р·Р°РЅРёСЏ РїРѕ РїРѕР»СЏРј РґР°С‚Р°, Р·РЅР°С‡РµРЅРёРµ, РёСЃС‚РѕС‡РЅРёРє
 	public void addMeterRead(Date dt, double val, Source src){
 		MeterRead mr = new MeterRead();
 		mr.setMrDt(dt);
@@ -116,30 +116,30 @@ public class Meter {
 		addMeterRead(mr);
 	}
 	
-	// добавить показания по объекту показания mr
+	// РґРѕР±Р°РІРёС‚СЊ РїРѕРєР°Р·Р°РЅРёСЏ РїРѕ РѕР±СЉРµРєС‚Сѓ РїРѕРєР°Р·Р°РЅРёСЏ mr
 	public void addMeterRead(MeterRead mr){
 			if(mrList.contains(mr)){
-				System.out.println("Такое показание уже есть.");
+				System.out.println("РўР°РєРѕРµ РїРѕРєР°Р·Р°РЅРёРµ СѓР¶Рµ РµСЃС‚СЊ.");
 				return;
 			}
 			mrList.add(mr);
 		}
 	
-	// удалить показания
+	// СѓРґР°Р»РёС‚СЊ РїРѕРєР°Р·Р°РЅРёСЏ
 	public void removeMeterRead(MeterRead mr){
 				mrList.remove(mr);
 	}
 	
-	// печать всех показаний
+	// РїРµС‡Р°С‚СЊ РІСЃРµС… РїРѕРєР°Р·Р°РЅРёР№
 	public void printMRs(){
-		System.out.println("---------------------------------------------Все показания");
+		System.out.println("---------------------------------------------Р’СЃРµ РїРѕРєР°Р·Р°РЅРёСЏ");
 		for (MeterRead mr:mrList){
 			System.out.println(mr);
 		}
 		System.out.println("---------------------------------------------");
 	}
 	
-	// получить показания на дату
+	// РїРѕР»СѓС‡РёС‚СЊ РїРѕРєР°Р·Р°РЅРёСЏ РЅР° РґР°С‚Сѓ
 	public MeterRead getMeterReadByDate(Date d){
 		for (MeterRead mr:mrList){
 			if (mr.getMrDt().equals(d)){
@@ -153,14 +153,14 @@ public class Meter {
 		return this.mrList;
 	}
 	
-	// получить самое последнее показание
+	// РїРѕР»СѓС‡РёС‚СЊ СЃР°РјРѕРµ РїРѕСЃР»РµРґРЅРµРµ РїРѕРєР°Р·Р°РЅРёРµ
 	public MeterRead getLastMeterRead(){
 		return Collections.max(mrList, new CustomComparator());
 	}
 	
-	// вывод списка показаний с сортировкой по дате показаний.
+	// РІС‹РІРѕРґ СЃРїРёСЃРєР° РїРѕРєР°Р·Р°РЅРёР№ СЃ СЃРѕСЂС‚РёСЂРѕРІРєРѕР№ РїРѕ РґР°С‚Рµ РїРѕРєР°Р·Р°РЅРёР№.
 	public void printSortMRs(){
-		// класс, для которого не нужно создавать экземпляр и у которого много методов.
+		// РєР»Р°СЃСЃ, РґР»СЏ РєРѕС‚РѕСЂРѕРіРѕ РЅРµ РЅСѓР¶РЅРѕ СЃРѕР·РґР°РІР°С‚СЊ СЌРєР·РµРјРїР»СЏСЂ Рё Сѓ РєРѕС‚РѕСЂРѕРіРѕ РјРЅРѕРіРѕ РјРµС‚РѕРґРѕРІ.
 		Collections.sort(mrList, new CustomComparator());
 		System.out.println("---------------------------------------------");
 		for (MeterRead mr:mrList){
@@ -169,7 +169,7 @@ public class Meter {
 		System.out.println("---------------------------------------------");
 	}
 	
-	// для сортировки создается отдельный класс
+	// РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё СЃРѕР·РґР°РµС‚СЃСЏ РѕС‚РґРµР»СЊРЅС‹Р№ РєР»Р°СЃСЃ
 	public class CustomComparator implements Comparator<MeterRead>{
 
 		@Override
@@ -182,7 +182,7 @@ public class Meter {
 	
 	public void printMrByDiapSortByPriority(Date mrDt1, Date mrDt2){
 		Collections.sort(mrList, new CustomComparatorPriority());
-		System.out.println("Отсортированные показания по приоритету в диапазоне: "+ mrDt1+" - "+mrDt2);
+		System.out.println("РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Рµ РїРѕРєР°Р·Р°РЅРёСЏ РїРѕ РїСЂРёРѕСЂРёС‚РµС‚Сѓ РІ РґРёР°РїР°Р·РѕРЅРµ: "+ mrDt1+" - "+mrDt2);
 		for(MeterRead mr:mrList){
 			if(mr.getMrDt().getTime()<=mrDt2.getTime() & mr.getMrDt().getTime()>=mrDt1.getTime()){
 				System.out.println(mr);
@@ -190,7 +190,7 @@ public class Meter {
 		}
 	}
 	
-	// для сортировки по приоритету
+	// РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РїРѕ РїСЂРёРѕСЂРёС‚РµС‚Сѓ
 	public class CustomComparatorPriority implements Comparator<MeterRead>{
 
 		@Override
@@ -213,21 +213,21 @@ public class Meter {
 	
 	
 	
-	//																			РАБОТА С ХАРАКТЕРИСТИКАМИ
+	//																			Р РђР‘РћРўРђ РЎ РҐРђР РђРљРўР•Р РРЎРўРРљРђРњР
 	
-	// Добавить характеристику как объект
+	// Р”РѕР±Р°РІРёС‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РєР°Рє РѕР±СЉРµРєС‚
 	public void addMtrChar(MeterChar mtrChar){
 		if(mtrCharList.contains(mtrChar)){
-			System.out.println("Характеристика существует. Добавление невозможно!");
+			System.out.println("РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєР° СЃСѓС‰РµСЃС‚РІСѓРµС‚. Р”РѕР±Р°РІР»РµРЅРёРµ РЅРµРІРѕР·РјРѕР¶РЅРѕ!");
 		} else if(!this.id.equals(mtrChar.getMeterId())){
-			System.out.println("ИД ПУ не соответствует ИД ПУ характеристики");
+			System.out.println("РР” РџРЈ РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ РР” РџРЈ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё");
 		} else {
 			mtrCharList.add(mtrChar);
-			System.out.printf("Добавлена характеристика: ИД ПУ - %s, Дата - %s, тип - %s, значение %s \n", mtrChar.getMeterId().getId(), mtrChar.getCharDate(), mtrChar.getCharType(), mtrChar.getCharVal());
+			System.out.printf("Р”РѕР±Р°РІР»РµРЅР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєР°: РР” РџРЈ - %s, Р”Р°С‚Р° - %s, С‚РёРї - %s, Р·РЅР°С‡РµРЅРёРµ %s \n", mtrChar.getMeterId().getId(), mtrChar.getCharDate(), mtrChar.getCharType(), mtrChar.getCharVal());
 		}
 	}
 	
-	// Добавить характеристику по полям
+	// Р”РѕР±Р°РІРёС‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РїРѕ РїРѕР»СЏРј
 	public void addMtrChar(Meter_Id id, Date charDate, String charType, String charVal){
 		MeterChar mc = new MeterChar(id);
 		mc.setCharDate(charDate);
@@ -236,25 +236,25 @@ public class Meter {
 		addMtrChar(mc);
 	}
 	
-	// удалить характеристику
+	// СѓРґР°Р»РёС‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ
 	public void removeMtrChar(MeterChar mc){
 		mtrCharList.remove(mc);
 	}
 	
-	// вывод списка характеристик (без сортировки)
+	// РІС‹РІРѕРґ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє (Р±РµР· СЃРѕСЂС‚РёСЂРѕРІРєРё)
 	public void printMtrChar(){
-		System.out.println("--------------------Полный список характеристик без сортировки");
+		System.out.println("--------------------РџРѕР»РЅС‹Р№ СЃРїРёСЃРѕРє С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє Р±РµР· СЃРѕСЂС‚РёСЂРѕРІРєРё");
 		for(MeterChar mc:mtrCharList){
 			System.out.println(mc);
 		}
 		System.out.println("--------------------------------------------------------------------------------");
 	}
 	
-	// вывод отсортированного по дате списка характеристик определенного типа
+	// РІС‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РїРѕ РґР°С‚Рµ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ С‚РёРїР°
 	public void printSortMtrChar(String charType){
-		// сортируем лист по дате используя созданный класс кустомКомпараторЧар
+		// СЃРѕСЂС‚РёСЂСѓРµРј Р»РёСЃС‚ РїРѕ РґР°С‚Рµ РёСЃРїРѕР»СЊР·СѓСЏ СЃРѕР·РґР°РЅРЅС‹Р№ РєР»Р°СЃСЃ РєСѓСЃС‚РѕРјРљРѕРјРїР°СЂР°С‚РѕСЂР§Р°СЂ
 		Collections.sort(mtrCharList, new CustomComparatorChar());
-		System.out.println("--------------------Отсортированный по дате список характеристик типа: "+charType);
+		System.out.println("--------------------РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РїРѕ РґР°С‚Рµ СЃРїРёСЃРѕРє С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє С‚РёРїР°: "+charType);
 		for(MeterChar mc:mtrCharList){
 			if(mc.getCharType().equals(charType)){
 				System.out.println(mc);
@@ -263,7 +263,7 @@ public class Meter {
 		System.out.println("--------------------------------------------------------------------------------");
 	}
 		
-	// возврат характеристики указанного типа на указанную дату
+	// РІРѕР·РІСЂР°С‚ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё СѓРєР°Р·Р°РЅРЅРѕРіРѕ С‚РёРїР° РЅР° СѓРєР°Р·Р°РЅРЅСѓСЋ РґР°С‚Сѓ
 	public MeterChar retMtrChat(Date charDate, String charType){
 		for(MeterChar mc:mtrCharList ){
 			if(mc.getCharDate().equals(charDate) && mc.getCharType().equals(charType)){
@@ -273,7 +273,7 @@ public class Meter {
 		return null;
 	}
 	
-	// для сортировки характеристик по дате
+	// РґР»СЏ СЃРѕСЂС‚РёСЂРѕРІРєРё С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє РїРѕ РґР°С‚Рµ
 		public class CustomComparatorChar implements Comparator<MeterChar>{
 
 		@Override

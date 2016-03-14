@@ -1,4 +1,4 @@
-package com.lesk.test1.account;
+п»їpackage com.lesk.test1.account;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -14,15 +14,15 @@ public class Account {
 		return "Account [id=" + id + ", name=" + name + "]";
 	}
 
-	// свойства класса
+	// СЃРІРѕР№СЃС‚РІР° РєР»Р°СЃСЃР°
 	private String name;
 	private Account_Id id;
 	private Date startDt;
 	private Date acctCharDt;
 	private String passport;
 	
-	// методы класса Геттеры, Сеттеры
-	// можно генерировать автоматически из меню Source > Generate Getters Setters
+	// РјРµС‚РѕРґС‹ РєР»Р°СЃСЃР° Р“РµС‚С‚РµСЂС‹, РЎРµС‚С‚РµСЂС‹
+	// РјРѕР¶РЅРѕ РіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё РёР· РјРµРЅСЋ Source > Generate Getters Setters
 	
 	public Date getAcctCharDt() {
 		return acctCharDt;
@@ -62,7 +62,7 @@ public class Account {
 	}
 	
 	// -----------------------------------------	
-	// Добавляем ИД аккаунта
+	// Р”РѕР±Р°РІР»СЏРµРј РР” Р°РєРєР°СѓРЅС‚Р°
 	public void setId(Account_Id id) {
 		this.id = id;
 	}
@@ -78,15 +78,15 @@ public class Account {
 		System.out.println("Account activated: "+ this.startDt);
 	}
 	
-	// конструктор
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	public Account(){
 		//System.out.println("Account constructor W/O parameters");
 		this.id = new Account_Id();
 		this.acctCharList = new ArrayList<AccountChar>();
 		
 	}
-	// конструктор с параметрами
-	// можно генераровать автоматически, как геттеры и сеттеры.
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	// РјРѕР¶РЅРѕ РіРµРЅРµСЂР°СЂРѕРІР°С‚СЊ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё, РєР°Рє РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹.
 	public Account(String name){
 		System.out.println("Account constructor String parameter");
 		this.name=name;
@@ -95,7 +95,7 @@ public class Account {
 		
 	}
 	
-	// конструктор, при котором номер паспорта будет номером ИД
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ, РїСЂРё РєРѕС‚РѕСЂРѕРј РЅРѕРјРµСЂ РїР°СЃРїРѕСЂС‚Р° Р±СѓРґРµС‚ РЅРѕРјРµСЂРѕРј РР”
 	public Account(String n, String pass){
 		System.out.println("Account constructor for Passport");
 		this.name = n;
@@ -108,35 +108,35 @@ public class Account {
 	
 	
 	
-	//----------------------- Работаем с xарактеристиками
+	//----------------------- Р Р°Р±РѕС‚Р°РµРј СЃ xР°СЂР°РєС‚РµСЂРёСЃС‚РёРєР°РјРё
 	
 	
-	//добавить характеристику в список
+	//РґРѕР±Р°РІРёС‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РІ СЃРїРёСЃРѕРє
 		public void addAcctChar(AccountChar acctChar){
 			if(acctCharList.contains(acctChar)){
-				System.out.println("----------- Добавляется характеристика ---->  " + acctChar + " типа "+ acctChar.getCharType());
-				System.out.println("Характеристика уже существует!");
+				System.out.println("----------- Р”РѕР±Р°РІР»СЏРµС‚СЃСЏ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєР° ---->  " + acctChar + " С‚РёРїР° "+ acctChar.getCharType());
+				System.out.println("РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєР° СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!");
 				return;
 			}  else{
 				acctCharList.add(acctChar);
-				System.out.println("----------- Добавляется характеристика ---->  " + acctChar + " типа "+ acctChar.getCharType());
-				System.out.printf("Добавлена характеристика ППУ: ИД ППУ - %s, Дата - %s, тип - %s, значение %s \n", acctChar.getAccountId().getId(), acctChar.getCharDate(), acctChar.getCharType(), acctChar.getCharVal());
+				System.out.println("----------- Р”РѕР±Р°РІР»СЏРµС‚СЃСЏ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєР° ---->  " + acctChar + " С‚РёРїР° "+ acctChar.getCharType());
+				System.out.printf("Р”РѕР±Р°РІР»РµРЅР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєР° РџРџРЈ: РР” РџРџРЈ - %s, Р”Р°С‚Р° - %s, С‚РёРї - %s, Р·РЅР°С‡РµРЅРёРµ %s \n", acctChar.getAccountId().getId(), acctChar.getCharDate(), acctChar.getCharType(), acctChar.getCharVal());
 			}
 		}
 		
-		//добавить характеристику по полям
+		//РґРѕР±Р°РІРёС‚СЊ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєСѓ РїРѕ РїРѕР»СЏРј
 		public void addAcctChar(Date acctCharDt, String charType, String charVal){
 			AccountChar acct = new AccountChar(id, acctCharDt, charType, charVal);
 			addAcctChar(acct);
 		}
 
-		// удаление характеристики
+		// СѓРґР°Р»РµРЅРёРµ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё
 		public void removeAcctChar(AccountChar acct){
 			acctCharList.remove(acct);
 		}
 		
 		
-		// возврат характеристики определенного типа на дату
+		// РІРѕР·РІСЂР°С‚ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ С‚РёРїР° РЅР° РґР°С‚Сѓ
 		public AccountChar retAcctChar(Date charDate, String charType){
 			for(AccountChar acct:acctCharList){
 				if(acct.getCharDate().equals(charDate) && acct.getCharType().equals(charType)){
@@ -147,10 +147,10 @@ public class Account {
 		}
 		
 		
-		// печать полного списка характеристик без сортировки
+		// РїРµС‡Р°С‚СЊ РїРѕР»РЅРѕРіРѕ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє Р±РµР· СЃРѕСЂС‚РёСЂРѕРІРєРё
 		public void printAcctChar(){
 			System.out.println();
-			System.out.println("------Вывод полного списка характеристик аккаунта без сортировки----------");
+			System.out.println("------Р’С‹РІРѕРґ РїРѕР»РЅРѕРіРѕ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє Р°РєРєР°СѓРЅС‚Р° Р±РµР· СЃРѕСЂС‚РёСЂРѕРІРєРё----------");
 			for(AccountChar acct:acctCharList){
 				System.out.println(acct);
 			}
@@ -159,15 +159,15 @@ public class Account {
 		}
 		
 		
-		// печать отсортированного списка характеристик указанного типа
-		// печатает в строку - будет инет - поправлю
+		// РїРµС‡Р°С‚СЊ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє СѓРєР°Р·Р°РЅРЅРѕРіРѕ С‚РёРїР°
+		// РїРµС‡Р°С‚Р°РµС‚ РІ СЃС‚СЂРѕРєСѓ - Р±СѓРґРµС‚ РёРЅРµС‚ - РїРѕРїСЂР°РІР»СЋ
 		public void printSortAcctChar(String acctCharType){
 			Collections.sort(acctCharList, new Comparator<AccountChar>() {
 				public int compare(AccountChar o1, AccountChar o2) {
 						return o1.toString().compareTo(o2.toString());
 				}
 			});
-			System.out.println("---------------------Вывод отсортированного списка характеристик аккаунта ----------");
+			System.out.println("---------------------Р’С‹РІРѕРґ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ СЃРїРёСЃРєР° С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРє Р°РєРєР°СѓРЅС‚Р° ----------");
 			System.out.println(acctCharList);	
 		}
 

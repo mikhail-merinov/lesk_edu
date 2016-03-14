@@ -1,4 +1,4 @@
-package com.lesk.test1.account;
+п»їpackage com.lesk.test1.account;
 
 import com.lesk.test1.id.Simple_Id;
 
@@ -15,7 +15,7 @@ public class Account_Id extends Simple_Id {
 
 	public Account_Id(String id) {
 		if (Integer.parseInt(id)>=1000000){
-			System.out.println("ИД не может быть больше 1000000!!!");
+			System.out.println("РР” РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 1000000!!!");
 		}else{
 			super.setId(id);
 		}

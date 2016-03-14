@@ -1,4 +1,4 @@
-package com.lesk.test1.account;
+п»їpackage com.lesk.test1.account;
 
 import java.sql.Date;
 
@@ -8,17 +8,17 @@ public class AccountChar extends Characteristics{
 	
 	private  Account_Id AccountId;
 	
-	//геттеры и сеттеры
+	//РіРµС‚С‚РµСЂС‹ Рё СЃРµС‚С‚РµСЂС‹
 	/**
-	 * Метод для получения лицевого счета
-	 * @return Возвращает ИД ЛС - возвращаемы значения
+	 * РњРµС‚РѕРґ РґР»СЏ РїРѕР»СѓС‡РµРЅРёСЏ Р»РёС†РµРІРѕРіРѕ СЃС‡РµС‚Р°
+	 * @return Р’РѕР·РІСЂР°С‰Р°РµС‚ РР” Р›РЎ - РІРѕР·РІСЂР°С‰Р°РµРјС‹ Р·РЅР°С‡РµРЅРёСЏ
 	 */
 	public Account_Id getAccountId() {
 		return AccountId;
 	}
 	/**
-	 * Устанавливает ИД лицевого счета
-	 * @param accountId ИД лицевого счета - входные параметры
+	 * РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ РР” Р»РёС†РµРІРѕРіРѕ СЃС‡РµС‚Р°
+	 * @param accountId РР” Р»РёС†РµРІРѕРіРѕ СЃС‡РµС‚Р° - РІС…РѕРґРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
 	 */
 	public void setAccountId(Account_Id accountId) {
 		AccountId = accountId;
@@ -28,12 +28,12 @@ public class AccountChar extends Characteristics{
 	
 	
 	@Deprecated
-	// конструктор с параметром Account ИД
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј Account РР”
 	public AccountChar(Account_Id accId){
 		this.AccountId=accId;
 	}
 	
-	//переписанный конструктор
+	//РїРµСЂРµРїРёСЃР°РЅРЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	public AccountChar (Account_Id AccountId, Date acctCharDt, String charType, String charVal){
 		this.AccountId= AccountId;
 		this.setCharDate(acctCharDt);
@@ -57,7 +57,7 @@ public class AccountChar extends Characteristics{
 	
 	
 	
-	//переопределение hash и эквалс
+	//РїРµСЂРµРѕРїСЂРµРґРµР»РµРЅРёРµ hash Рё СЌРєРІР°Р»СЃ
 	@Override
 	public int hashCode() {
 		final int prime = 31;

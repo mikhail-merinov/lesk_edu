@@ -1,21 +1,21 @@
-package com.lesk.test1.meter;
+п»їpackage com.lesk.test1.meter;
 
 
 import com.lesk.test1.characteristics.Characteristics;
 
-// создаем класс, наследуемся от родителя
+// СЃРѕР·РґР°РµРј РєР»Р°СЃСЃ, РЅР°СЃР»РµРґСѓРµРјСЃВ¤ РѕС‚ СЂРѕРґРёС‚РµР»В¤
 public class MeterChar extends Characteristics {
 
 	private Meter_Id meterId;
 	
 	
 	
-	// конструктор с параметром метерИД
+	// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РјРµС‚РµСЂВ»Ж’
 	public MeterChar(Meter_Id meterId){
 		this.meterId=meterId;
 	}
 
-	// геттеры сеттеры
+	// РіРµС‚С‚РµСЂС‹ СЃРµС‚С‚РµСЂС‹
 	public Meter_Id getMeterId() {
 		return meterId;
 	}
@@ -37,7 +37,7 @@ public class MeterChar extends Characteristics {
 
 
 
-	// переопределяем метод эквалс
+	// РїРµСЂРµРѕРїСЂРµРґРµР»В¤РµРј РјРµС‚РѕРґ СЌРєРІР°Р»СЃ
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -55,7 +55,7 @@ public class MeterChar extends Characteristics {
 		return true;
 	}
 
-	// переопределяем стринг
+	// РїРµСЂРµРѕРїСЂРµРґРµР»В¤РµРј СЃС‚СЂРёРЅРі
 	@Override
 	public String toString() {
 		return "MeterChar [meterId=" + meterId + ", toString()=" + super.toString() + "]";
