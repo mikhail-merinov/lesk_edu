@@ -14,8 +14,8 @@ public class Account_Id extends Simple_Id {
 	}
 
 	public Account_Id(String id) {
-		if (Integer.parseInt(id)>=1000){
-			System.out.println("ИД не может быть больше 1000!!!");
+		if (Integer.parseInt(id)>=1000000){
+			System.out.println("ИД не может быть больше 1000000!!!");
 		}else{
 			super.setId(id);
 		}

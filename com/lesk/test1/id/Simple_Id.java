@@ -7,7 +7,7 @@ public class Simple_Id {
  
  // получить случайный ID
  public Simple_Id() {
-  System.out.println("Simple_Id()");
+  //System.out.println("Simple_Id()");
   id = String.valueOf(new Random().nextInt(1000000000));
  }
  

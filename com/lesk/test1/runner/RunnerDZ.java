@@ -2,6 +2,8 @@ package com.lesk.test1.runner;
 //TESTTESTTEST
 import java.sql.Date;
 
+import com.lesk.test1.account.Account;
+import com.lesk.test1.account.AccountChar;
 import com.lesk.test1.meter.Meter;
 import com.lesk.test1.meter.MeterChar;
 import com.lesk.test1.meterRead.MeterRead;
@@ -106,6 +108,79 @@ public class RunnerDZ {
 		
 		mtr5.printMRs();
 		mtr5.printMrByDiapSortByPriority(Date.valueOf("2015-12-31"), Date.valueOf("2016-12-31"));
+		
+		
+		
+		
+		
+		
+		
+		
+		//--------------------------------------- ТЕСТИРУЕМ ХАРАКТЕРИСТИКИ АККАУНТА
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("ТЕСТИРУЕМ ХАРАКТЕРИСТИКИ АККАУНТА******************************************************");
+		System.out.println();
+		
+		
+		
+		
+		
+		// создаем аккаунт
+		Account acct = new Account();
+		acct.setName("Петров Иван Никифорович");
+		acct.setPassport("777001");
+		System.out.println("Привязываемся к ИД ЛС по номеру паспорта------------- " + acct);
+		
+		// рандом даты для простоты ввода
+		Date ad1=Date.valueOf("2016-03-10");
+		Date ad2=Date.valueOf("2016-02-11");
+
+		
+		// создаем характеристики Аккаунта	
+		AccountChar acctChar = new AccountChar(acct.getId());
+		acctChar.setCharDate(ad1);
+		acctChar.setCharType("VID_DOG");
+		acctChar.setCharVal("7");
+		System.out.println("Создаем хар-ку ИД ЛС " + acctChar.getAccountId() + ",  " + acctChar.getCharType() + ",  " +
+		acctChar.getCharVal() + ",  " +	acctChar.getCharDate());
+		
+		AccountChar acctChar1 = new AccountChar(acct.getId());
+		acctChar1.setCharDate(ad2);
+		acctChar1.setCharType("VID_DOG");
+		acctChar1.setCharVal("2");
+		System.out.println("Создаем хар-ку ИД ЛС " + acctChar1.getAccountId() + ",  " + acctChar1.getCharType() + ",  " +
+				acctChar1.getCharVal() + ",  " +	acctChar1.getCharDate());
+		
+		
+		AccountChar acctChar2 = new AccountChar(acct.getId());
+		acctChar2.setCharDate(ad2);
+		acctChar2.setCharType("CM-ISKRL");
+		acctChar2.setCharVal("NALLWD");
+		System.out.println("Создаем хар-ку ИД ЛС " + acctChar2.getAccountId() + ",  " + acctChar2.getCharType() + ",  " +
+				acctChar2.getCharVal() + ",  " +	acctChar2.getCharDate());
+		
+		//Проверка добавления существующей характеристики
+		AccountChar acctChar3 = new AccountChar(acct.getId());
+		acctChar3.setCharDate(ad2);
+		acctChar3.setCharType("CM-ISKRL");
+		acctChar3.setCharVal("NALLWD");
+		System.out.println("Создаем хар-ку ИД ЛС " + acctChar3.getAccountId() + ",  " + acctChar3.getCharType() + ",  " +
+				acctChar3.getCharVal() + ",  " +	acctChar3.getCharDate());
+		System.out.println();
+		
+		
+		// добавляем характеристику
+		acct.addAcctChar(acctChar);
+		acct.addAcctChar(acctChar1);
+		acct.addAcctChar(acctChar2);
+		acct.addAcctChar(acctChar3);
+		
+		// печать характеристик Аккаунта
+		acct.printAcctChar();
+		acct.printSortAcctChar("VID_DOG");
 		
 
 	}

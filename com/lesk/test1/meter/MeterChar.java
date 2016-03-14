@@ -8,6 +8,8 @@ public class MeterChar extends Characteristics {
 
 	private Meter_Id meterId;
 	
+	
+	
 	// конструктор с параметром метер»ƒ
 	public MeterChar(Meter_Id meterId){
 		this.meterId=meterId;
