@@ -2,8 +2,11 @@
 //TESTTESTTEST
 import java.sql.Date;
 
+import javax.swing.text.ChangedCharSetException;
+
 import com.lesk.test1.account.Account;
 import com.lesk.test1.account.AccountChar;
+import com.lesk.test1.characteristics.CharsException;
 import com.lesk.test1.meter.Meter;
 import com.lesk.test1.meter.MeterChar;
 import com.lesk.test1.meterRead.MeterRead;
@@ -89,9 +92,20 @@ public class RunnerDZ {
 		System.out.println(mrChar2);
 		
 		// добавляем характеристику
+		//mr.addMrChar(mrChar);
+		//mr.addMrChar(mrChar1);
+		//mr.addMrChar(mrChar2);
+		
+		try{
 		mr.addMrChar(mrChar);
 		mr.addMrChar(mrChar1);
 		mr.addMrChar(mrChar2);
+		mr.addMrChar(mrChar2);
+		} catch (CharsException e){
+			e.printStackTrace();
+		}
+		
+		
 		
 		// печать характеристик ППУ
 		mr.printMrChar();

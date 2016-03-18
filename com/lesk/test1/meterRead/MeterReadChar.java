@@ -1,5 +1,7 @@
 ﻿package com.lesk.test1.meterRead;
 
+import java.sql.Date;
+
 import com.lesk.test1.characteristics.Characteristics;
 
 public class MeterReadChar extends Characteristics {
@@ -13,6 +15,10 @@ public class MeterReadChar extends Characteristics {
 
 	// конструктор с параметром МР ИД
 	public MeterReadChar(MeterRead_Id mrId){
+		this.meterReadId=mrId;
+	}
+	
+	public MeterReadChar(MeterRead_Id mrId, Date mrDt, String charType, String charVal){
 		this.meterReadId=mrId;
 	}
 

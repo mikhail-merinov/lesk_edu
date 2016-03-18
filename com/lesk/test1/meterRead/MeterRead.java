@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.lesk.test1.characteristics.CharsException;
+
 
 public class MeterRead {
 	
@@ -91,10 +93,11 @@ public class MeterRead {
 	//---------------------------------------------------------------- РАБОТА С ХАРАКТЕРИСТИКАМИ ППУ
 	
 	//добавить характеристику в список
-	public void addMrChar(MeterReadChar mrc){
+	public void addMrChar(MeterReadChar mrc) throws CharsException{
 		if(mrCharList.contains(mrc)){
-			System.out.println("Характеристика уже существует!");
-			return;
+			//System.out.println("Характеристика уже существует!");
+			//return;
+			throw new CharsException(mrc);
 		} else if(!this.id.equals(mrc.getMeterReadId())){
 			System.out.println("ИД ППУ не соответствует ИД ППУ характеристики!");
 		} else{
@@ -105,11 +108,16 @@ public class MeterRead {
 	
 	//добавить характеристику по полям
 	public void addMrChar(MeterRead_Id mrId, Date mrDt, String charType, String charVal){
-		MeterReadChar mrc = new MeterReadChar(mrId);
-		mrc.setCharDate(mrDt);
-		mrc.setCharType(charType);
-		mrc.setCharVal(charVal);
+		MeterReadChar mrc = new MeterReadChar(mrId,mrDt,charType,charVal);
+		//MeterReadChar mrc = new MeterReadChar(mrId);
+		//mrc.setCharDate(mrDt);
+		//mrc.setCharType(charType);
+		//mrc.setCharVal(charVal);
+		try {
 		addMrChar(mrc);
+		} catch (CharsException e) {
+			e.printStackTrace();
+		}
 	}
 
 	// удаление характеристики
